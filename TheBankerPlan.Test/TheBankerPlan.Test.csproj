@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TheBankerPlan.BL\TheBankerPlan.csproj" />
     <ProjectReference Include="..\TheBankerPlan\TheBankerPlan.csproj" />
   </ItemGroup>
 
