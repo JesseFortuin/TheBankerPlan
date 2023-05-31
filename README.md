@@ -31,3 +31,40 @@ For the last case you can find below the amounts of his account at the beginning
 f11 = -5 so he has no way to withdraw something for his living in year 12.
 Note:
 Don't forget to convert the percent parameters as percentages in the body of your function: if a parameter percent is 2 you have to convert it to 0.02.
+
+----------------------------------------------
+
+Solutions
+
+       for (; n>1; n--)
+       {
+         f0 += (int)(f0*p/100) - c0;
+         c0 += (int)(c0*i/100);
+       }       
+       return f0 >= 0;
+
+------------
+
+       
+            Boolean answer = true;
+            
+            for (int x = 0; x < n - 1; ++x) 
+            {
+                f0 += (int)(f0 * p / 100) - c0;
+                c0 += (int)(c0 * i / 100);
+            }
+            if (f0 < 0) { answer = false; }
+            return answer;
+
+------------
+
+
+            => n == 0
+                ? true
+                : f0 < 0
+                    ? false
+                    : Fortune((int)Math.Floor(f0 + f0 * 0.01 * p - c0), 
+                                p,
+                                (int)Math.Floor(c0 + c0 * 0.01 * i), 
+                                n - 1, 
+                                i);	
